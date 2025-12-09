@@ -1,6 +1,6 @@
 .PHONY: all dats figs clean-dats clean-figs clean-all
 
-all: report/count_report.html
+all: docs/index.html
 
 dats: results/isles.dat \
 results/abyss.dat \
@@ -48,8 +48,8 @@ results/figure/sierra.png : scripts/plotcount.py results/sierra.dat
 		--output_file=results/figure/sierra.png
 
 # write the report
-report/count_report.html : report/count_report.qmd figs
-	quarto render report/count_report.qmd
+docs/index.html : report/count_report.qmd figs
+	quarto render report/count_report.qmd --output-dir ../docs --output index.html
 
 clean-dats :
 	rm -f results/isles.dat \
@@ -65,5 +65,5 @@ clean-figs :
 
 clean-all : clean-dats \
 	clean-figs
-	rm -f report/count_report.html
-	rm -rf report/count_report_files
+	rm -f docs/index.html
+	rm -rf docs/count_report_files
