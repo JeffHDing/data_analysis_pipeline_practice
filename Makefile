@@ -49,7 +49,7 @@ results/figure/sierra.png : scripts/plotcount.py results/sierra.dat
 
 # write the report
 docs/index.html : report/count_report.qmd figs
-	quarto render report/count_report.qmd --output-dir ../docs --output index.html
+	cd report && quarto render count_report.qmd --output-dir ../docs --output index.html
 
 clean-dats :
 	rm -f results/isles.dat \
