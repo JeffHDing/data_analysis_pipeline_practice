@@ -1,6 +1,7 @@
 ---
 title: Book word count report
 format: html
+embed-resources: true
 ---
 
 ## The most frequent words in the 4 novels we studied:
